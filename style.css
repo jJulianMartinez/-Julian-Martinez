@@ -1,0 +1,20 @@
+/* FORMA 3: CSS Externo */
+
+p {
+    color: #34495e;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+ul {
+    color: #16a085;
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: #2980b9;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
