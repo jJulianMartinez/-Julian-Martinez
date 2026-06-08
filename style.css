@@ -1,0 +1,431 @@
+/* ==========================================================================
+   RESETS Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Permite un desplazamiento suave al dar clic en el menú */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1F2937; /* Color de texto gris oscuro para excelente legibilidad */
+    background-color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* Contenedor global para limitar el ancho máximo y centrar el diseño */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Título estándar para las secciones principales */
+.titulo-seccion {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #111827;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Pequeña barra decorativa debajo del título de sección */
+.titulo-seccion::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #D97706; /* Color de acento dorado */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   HEADER / CABECERA DE NAVEGACIÓN
+   ========================================================================== */
+.sitio-header {
+    background-color: #111827; /* Fondo principal oscuro */
+    position: fixed; /* Mantiene la barra fija en la parte superior al hacer scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-texto {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.logo-texto .acento {
+    color: #D97706; /* Resalta el sufijo ANFOTS en dorado */
+}
+
+.navegacion-principal {
+    display: flex;
+    gap: 25px;
+}
+
+.enlace-nav {
+    color: #F3F4F6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.enlace-nav:hover {
+    color: #D97706; /* Cambio a dorado al pasar el mouse */
+}
+
+/* ==========================================================================
+   SECCIÓN HERO (BIENVENIDA)
+   ========================================================================== */
+.seccion-hero {
+    background-color: #FFFFFF; /* Color claro 2 */
+    padding: 160px 0 80px 0; /* Margen superior amplio para compensar la barra fija */
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-texto {
+    flex: 1;
+}
+
+.hero-titulo {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.acento-texto {
+    color: #D97706;
+}
+
+.hero-subtitulo {
+    font-size: 1.5rem;
+    color: #4B5563;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-descripcion {
+    font-size: 1.05rem;
+    color: #4B5563;
+    margin-bottom: 30px;
+    max-width: 540px;
+}
+
+/* Botón llamativo de llamada a la acción */
+.boton-principal {
+    display: inline-block;
+    background-color: #D97706; /* Color de acento */
+    color: #FFFFFF;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(217, 119, 6, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-principal:hover {
+    background-color: #B45309; /* Variación de dorado más oscura para el hover */
+    transform: translateY(-2px); /* Efecto leve de elevación */
+}
+
+/* Contenedor y máscara circular para la foto de perfil */
+.hero-imagen-contenedor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.foto-perfil-circular {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Transforma el contenedor en un círculo perfecto */
+    overflow: hidden; /* Corta cualquier excedente de la imagen */
+    border: 6px solid #D97706; /* Borde dorado alrededor del perfil */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.foto-perfil-circular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de tu foto sin distorsionarla */
+}
+
+/* ==========================================================================
+   SECCIÓN SOBRE MÍ
+   ========================================================================== */
+.seccion-sobre-mi {
+    background-color: #F3F4F6; /* Color claro 1 para alternar contraste */
+    padding: 80px 0;
+}
+
+.texto-biografia {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4B5563;
+}
+
+/* ==========================================================================
+   SECCIÓN MIS PROYECTOS (TARJETAS EN FILA)
+   ========================================================================== */
+.seccion-proyectos {
+    background-color: #FFFFFF; /* Color claro 2 */
+    padding: 80px 0;
+}
+
+.proyectos-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que colapsen ordenadamente en pantallas pequeñas */
+}
+
+.tarjeta-proyecto {
+    background-color: #FFFFFF;
+    flex: 1;
+    min-width: 300px; /* Asegura un tamaño mínimo óptimo por tarjeta */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra sutil solicitada */
+    border: 1px solid #E5E7EB;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-5px); /* Elevación suave al pasar el mouse */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.proyecto-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Ajusta los paisajes y retratos perfectamente al recuadro */
+    display: block;
+}
+
+.proyecto-contenido {
+    padding: 25px;
+}
+
+.proyecto-titulo {
+    font-size: 1.25rem;
+    color: #111827;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.proyecto-descripcion {
+    font-size: 0.95rem;
+    color: #6B7280;
+}
+
+/* ==========================================================================
+   SECCIÓN HABILIDADES (4 COLUMNAS CONTRASTANTES)
+   ========================================================================== */
+.seccion-habilidades {
+    background-color: #F3F4F6; /* Color claro 1 */
+    padding: 80px 0;
+}
+
+.habilidades-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-habilidad {
+    background-color: #1F2937; /* Fondo oscuro medio para crear contraste con la sección */
+    color: #FFFFFF;
+    flex: 1;
+    min-width: 220px;
+    padding: 25px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tarjeta-habilidad:hover {
+    background-color: #D97706; /* Cambia a dorado completo en el hover */
+    color: #111827;
+}
+
+/* ==========================================================================
+   SECCIÓN CONTACTO (DOS COLUMNAS: MENSAJE + FORMULARIO)
+   ========================================================================== */
+.seccion-contacto {
+    background-color: #FFFFFF; /* Color claro 2 */
+    padding: 80px 0;
+}
+
+.contacto-flex {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contacto-info {
+    flex: 1;
+}
+
+.contacto-titulo {
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contacto-texto {
+    font-size: 1.1rem;
+    color: #4B5563;
+    margin-bottom: 20px;
+}
+
+.contacto-subtexto {
+    font-size: 0.95rem;
+    color: #6B7280;
+    font-style: italic;
+}
+
+.contacto-formulario-contenedor {
+    flex: 1;
+    background-color: #F3F4F6; /* Caja contenedora clara para el formulario */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+}
+
+.formulario-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.formulario-input,
+.formulario-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #D1D5DB;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #111827;
+    transition: border-color 0.3s ease;
+}
+
+.formulario-input:focus,
+.formulario-textarea:focus {
+    outline: none;
+    border-color: #D97706; /* Resaltado dorado al estar activo */
+}
+
+/* Estilo para el botón de envío */
+.boton-formulario {
+    width: 100%;
+    background-color: #111827; /* Botón oscuro elegante */
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-formulario:hover {
+    background-color: #D97706; /* Cambia a dorado al pasar el cursor */
+}
+
+/* ==========================================================================
+   FOOTER / PIE DE PÁGINA
+   ========================================================================== */
+.sitio-footer {
+    background-color: #111827; /* Color principal oscuro */
+    color: #9CA3AF;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 20px;
+}
+
+.enlace-red {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.enlace-red:hover {
+    color: #D97706; /* Efecto suave a dorado */
+}
+
+/* RESPONSIVIDAD: Adaptación automática para pantallas móviles o tabletas */
+@media (max-width: 768px) {
+    .header-flex,
+    .hero-flex,
+    .contacto-flex,
+    .footer-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navegacion-principal {
+        margin-top: 15px;
+    }
+
+    .foto-perfil-circular {
+        width: 260px;
+        height: 260px;
+    }
+
+    .contacto-formulario-contenedor {
+        padding: 25px;
+    }
+}
